@@ -1,0 +1,25 @@
+<?php
+
+use App\Http\Controllers\customersController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/reg', [customersController::class, 'index']);
+Route::post('/login', [customersController::class, 'store']);
+Route::get('/login', [customersController::class, 'login']);
+Route::post('/product', [customersController::class, 'loginCheck']);
+Route::get('/product', [customersController::class, 'product']);
+
